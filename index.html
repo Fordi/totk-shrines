@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Your Next Shrine</title>
+  </head>
+  <body>
+    <label for="location">
+      Your location:&nbsp;
+      <input type="text" id="location" />
+      <div id="next">
+        
+      </div>
+    </label>
+  </body>
+  <script>
+    const shrines = [
+      {
+        "name": "Ukouh Shrine",
+        "coords": [
+          274,
+          -913,
+          -1460
+        ]
+      },
+      {
+        "name": "In-isa Shrine",
+        "coords": [
+          27,
+          -1503,
+          1408
+        ]
+      },
+      {
+        "name": "Gutanbac Shrine",
+        "coords": [
+          709,
+          -1381,
+          1584
+        ]
+      },
+      {
+        "name": "Nachoyah Shrine",
+        "coords": [
+          388,
+          -1660,
+          2299
+        ]
+      },
+      {
+        "name": "Mayaumekis Shrine",
+        "coords": [
+          -2947,
+          3051,
+          897
+        ]
+      },
+      {
+        "name": "Kahatanaum Shrine",
+        "coords": [
+          -3295,
+          3430,
+          1347
+        ]
+      },
+      {
+        "name": "Kadaunar Shrine",
+        "coords": [
+          1882,
+          1202,
+          1251
+        ]
+      },
+      {
+        "name": "Mayam Shrine",
+        "coords": [
+          341,
+          2814,
+          1821
+        ]
+      },
+      {
+        "name": "Taninoud Shrine",
+        "coords": [
+          -1800,
+          3405,
+          948
+        ]
+      },
+      {
+        "name": "Ijo-o Shrine",
+        "coords": [
+          -3860,
+          2682,
+          702
+        ]
+      },
+      {
+        "name": "Josiu Shrine",
+        "coords": [
+          1760,
+          -1209,
+          924
+        ]
+      },
+      {
+        "name": "Ukoojisi Shrine",
+        "coords": [
+          1468,
+          -2168,
+          585
+        ]
+      },
+      {
+        "name": "Natak Shrine",
+        "coords": [
+          3671,
+          1484,
+          1158
+        ]
+      },
+      {
+        "name": "Kumamayn Shrine",
+        "coords": [
+          2856,
+          -2858,
+          1212
+        ]
+      },
+      {
+        "name": "Mayanas Shrine",
+        "coords": [
+          4614,
+          -948,
+          1790
+        ]
+      },
+      {
+        "name": "Ganos Shrine",
+        "coords": [
+          -3371,
+          466,
+          1695
+        ]
+      },
+      {
+        "name": "Jirutagumac Shrine",
+        "coords": [
+          2916,
+          533,
+          951
+        ]
+      },
+      {
+        "name": "Gikaku Shrine",
+        "coords": [
+          4504,
+          2164,
+          1155
+        ]
+      },
+      {
+        "name": "Jinodok Shrine",
+        "coords": [
+          -1257,
+          -1487,
+          1008
+        ]
+      },
+      {
+        "name": "Igoshon Shrine",
+        "coords": [
+          3480,
+          665,
+          1325
+        ]
+      },
+      {
+        "name": "Taunhiy Shrine",
+        "coords": [
+          -2404,
+          825,
+          615
+        ]
+      },
+      {
+        "name": "Tenbez Shrine",
+        "coords": [
+          -971,
+          3535,
+          1011
+        ]
+      },
+      {
+        "name": "Kyononis Shrine",
+        "coords": [
+          -205,
+          451,
+          21
+        ]
+      },
+      {
+        "name": "Ishodag Shrine",
+        "coords": [
+          -880,
+          422,
+          49
+        ]
+      },
+      {
+        "name": "Yamiyo Shrine",
+        "coords": [
+          332,
+          470,
+          29
+        ]
+      },
+      {
+        "name": "Sepapa Shrine",
+        "coords": [
+          222,
+          1085,
+          28
+        ]
+      },
+      {
+        "name": "Makasura Shrine",
+        "coords": [
+          1700,
+          -1051,
+          166
+        ]
+      },
+      {
+        "name": "Tukarok Shrine",
+        "coords": [
+          915,
+          -250,
+          34
+        ]
+      },
+      {
+        "name": "Morok Shrine",
+        "coords": [
+          1182,
+          -779,
+          133
+        ]
+      },
+      {
+        "name": "Jiosin Shrine",
+        "coords": [
+          -240,
+          -370,
+          27
+        ]
+      },
+      {
+        "name": "Susuyai Shrine",
+        "coords": [
+          -785,
+          -434,
+          18
+        ]
+      },
+      {
+        "name": "Eshos Shrine",
+        "coords": [
+          1566,
+          -1944,
+          157
+        ]
+      },
+      {
+        "name": "Sinakawak Shrine",
+        "coords": [
+          -1413,
+          756,
+          89
+        ]
+      },
+      {
+        "name": "Taki-ihaban Shrine",
+        "coords": [
+          -1830,
+          1194,
+          147
+        ]
+      },
+      {
+        "name": "Runakit Shrine",
+        "coords": [
+          2530,
+          1170,
+          178
+        ]
+      },
+      {
+        "name": "Makurukis Shrine",
+        "coords": [
+          -2847,
+          629,
+          233
+        ]
+      },
+      {
+        "name": "Oromuwak Shrine",
+        "coords": [
+          -3079,
+          1617,
+          243
+        ]
+      },
+      {
+        "name": "Jonsau Shrine",
+        "coords": [
+          1744,
+          17,
+          25
+        ]
+      },
+      {
+        "name": "Jojon Shrine",
+        "coords": [
+          1202,
+          329,
+          27
+        ]
+      },
+      {
+        "name": "Gatakis Shrine",
+        "coords": [
+          -3650,
+          1805,
+          168
+        ]
+      },
+      {
+        "name": "Sahirow Shrine",
+        "coords": [
+          -3354,
+          2387,
+          361
+        ]
+      },
+      {
+        "name": "Ren-Iz Shrine",
+        "coords": [
+          75,
+          823,
+          82
+        ]
+      },
+      {
+        "name": "Wao-os Shrine",
+        "coords": [
+          -4059,
+          1990,
+          183
+        ]
+      },
+      {
+        "name": "Eutoum Shrine",
+        "coords": [
+          -3506,
+          3570,
+          387
+        ]
+      },
+      {
+        "name": "Tauyosipun Shrine",
+        "coords": [
+          -4539,
+          2881,
+          262
+        ]
+      },
+      {
+        "name": "Mayachin Shrine",
+        "coords": [
+          -750,
+          -869,
+          31
+        ]
+      },
+      {
+        "name": "Ekochiu Shrine",
+        "coords": [
+          1062,
+          1279,
+          45
+        ]
+      },
+      {
+        "name": "Timawak Shrine",
+        "coords": [
+          1799,
+          1638,
+          311
+        ]
+      },
+      {
+        "name": "Marakuguc Shrine",
+        "coords": [
+          1761,
+          2508,
+          437
+        ]
+      },
+      {
+        "name": "Sitsum Shrine",
+        "coords": [
+          2369,
+          2595,
+          790
+        ]
+      },
+      {
+        "name": "Orochium Shrine",
+        "coords": [
+          -1636,
+          2641,
+          239
+        ]
+      },
+      {
+        "name": "Sibajitak Shrine",
+        "coords": [
+          2399,
+          3274,
+          402
+        ]
+      },
+      {
+        "name": "Sibajitak Shrine",
+        "coords": [
+          2399,
+          3274,
+          402
+        ]
+      },
+      {
+        "name": "Sibajitak Shrine",
+        "coords": [
+          2399,
+          3274,
+          402
+        ]
+      },
+      {
+        "name": "Sibajitak Shrine",
+        "coords": [
+          2399,
+          3274,
+          402
+        ]
+      },
+      {
+        "name": "Sibajitak Shrine",
+        "coords": [
+          2399,
+          3274,
+          402
+        ]
+      },
+      {
+        "name": "Oshozan-u Shrine",
+        "coords": [
+          -1405,
+          3677,
+          288
+        ]
+      },
+      {
+        "name": "Kishinona Shrine",
+        "coords": [
+          2567,
+          1244,
+          173
+        ]
+      },
+      {
+        "name": "Jiotak Shrine",
+        "coords": [
+          1833,
+          3179,
+          257
+        ]
+      },
+      {
+        "name": "Sikukuu Shrine",
+        "coords": [
+          699,
+          2793,
+          226
+        ]
+      },
+      {
+        "name": "Zanmik Shrine",
+        "coords": [
+          3469,
+          -2179,
+          148
+        ]
+      },
+      {
+        "name": "Mayahisik Shrine",
+        "coords": [
+          3730,
+          -2058,
+          189
+        ]
+      },
+      {
+        "name": "Kyokugon Shrine",
+        "coords": [
+          -710,
+          -1550,
+          6
+        ]
+      },
+      {
+        "name": "Kamizun Shrine",
+        "coords": [
+          -177,
+          -1557,
+          23
+        ]
+      },
+      {
+        "name": "Kikakin Shrine",
+        "coords": [
+          -395,
+          2736,
+          287
+        ]
+      },
+      {
+        "name": "Mayak Shrine",
+        "coords": [
+          1270,
+          3733,
+          106
+        ]
+      },
+      {
+        "name": "Taniten Shrine",
+        "coords": [
+          -75,
+          -1115,
+          21
+        ]
+      },
+      {
+        "name": "Tajikats Shrine",
+        "coords": [
+          344,
+          -1009,
+          16
+        ]
+      },
+      {
+        "name": "Minetak Shrine",
+        "coords": [
+          393,
+          3485,
+          68
+        ]
+      },
+      {
+        "name": "Isisim Shrine",
+        "coords": [
+          1841,
+          2841,
+          363
+        ]
+      },
+      {
+        "name": "Turakamik Shrine",
+        "coords": [
+          -2658,
+          2236,
+          67
+        ]
+      },
+      {
+        "name": "Mayachideg Shrine",
+        "coords": [
+          3061,
+          1823,
+          216
+        ]
+      },
+      {
+        "name": "Mayatat Shrine",
+        "coords": [
+          -3290,
+          -2512,
+          24
+        ]
+      },
+      {
+        "name": "Soryotanog Shrine",
+        "coords": [
+          -3881,
+          -2961,
+          123
+        ]
+      },
+      {
+        "name": "Sinatanika Shrine",
+        "coords": [
+          3842,
+          2300,
+          48
+        ]
+      },
+      {
+        "name": "Miryotanog Shrine",
+        "coords": [
+          -4679,
+          -3086,
+          54
+        ]
+      },
+      {
+        "name": "Joniu Shrine",
+        "coords": [
+          2918,
+          506,
+          155
+        ]
+      },
+      {
+        "name": "Gemimik Shrine",
+        "coords": [
+          4513,
+          2116,
+          1
+        ]
+      },
+      {
+        "name": "Karahatag Shrine",
+        "coords": [
+          -3726,
+          3625,
+          43
+        ]
+      },
+      {
+        "name": "Siwakama Shrine",
+        "coords": [
+          -2445,
+          3345,
+          41
+        ]
+      },
+      {
+        "name": "Kurakat Shrine",
+        "coords": [
+          2362,
+          -511,
+          156
+        ]
+      },
+      {
+        "name": "Jochi-ihiga Shrine",
+        "coords": [
+          3810,
+          1218,
+          90
+        ]
+      },
+      {
+        "name": "Moshapin Shrine",
+        "coords": [
+          2678,
+          1905,
+          131
+        ]
+      },
+      {
+        "name": "Rakakudaj Shrine",
+        "coords": [
+          -2036,
+          -1854,
+          65
+        ]
+      },
+      {
+        "name": "Zakusu Shrine",
+        "coords": [
+          3527,
+          -1482,
+          168
+        ]
+      },
+      {
+        "name": "Ikatak Shrine",
+        "coords": [
+          -3950,
+          1138,
+          112
+        ]
+      },
+      {
+        "name": "O-ogim Shrine",
+        "coords": [
+          2755,
+          -1089,
+          100
+        ]
+      },
+      {
+        "name": "Momosik Shrine",
+        "coords": [
+          2959,
+          2758,
+          524
+        ]
+      },
+      {
+        "name": "Usazum Shrine",
+        "coords": [
+          -2138,
+          -874,
+          93
+        ]
+      },
+      {
+        "name": "Tokiy Shrine",
+        "coords": [
+          2304,
+          -2377,
+          -28
+        ]
+      },
+      {
+        "name": "Rutafu-um Shrine",
+        "coords": [
+          -2996,
+          3102,
+          515
+        ]
+      },
+      {
+        "name": "Pupunke Shrine",
+        "coords": [
+          620,
+          2211,
+          164
+        ]
+      },
+      {
+        "name": "Sisuran Shrine",
+        "coords": [
+          -2560,
+          3353,
+          245
+        ]
+      },
+      {
+        "name": "Sakunbomar Shrine",
+        "coords": [
+          167,
+          2322,
+          179
+        ]
+      },
+      {
+        "name": "Musanokir Shrine",
+        "coords": [
+          409,
+          2133,
+          144
+        ]
+      },
+      {
+        "name": "Otak Shrine",
+        "coords": [
+          -4391,
+          3714,
+          212
+        ]
+      },
+      {
+        "name": "Ninjis Shrine",
+        "coords": [
+          353,
+          1891,
+          178
+        ]
+      },
+      {
+        "name": "Jochisiu Shrine",
+        "coords": [
+          931,
+          -1903,
+          30
+        ]
+      },
+      {
+        "name": "En-oma Shrine",
+        "coords": [
+          103,
+          -2517,
+          -87
+        ]
+      },
+      {
+        "name": "Turakawak Shrine",
+        "coords": [
+          -3496,
+          -198,
+          66
+        ]
+      },
+      {
+        "name": "Sifumim Shrine",
+        "coords": [
+          2824,
+          -3267,
+          78
+        ]
+      },
+      {
+        "name": "Utojis Shrine",
+        "coords": [
+          1217,
+          -2542,
+          96
+        ]
+      },
+      {
+        "name": "Tsutsu-um Shrine",
+        "coords": [
+          -1423,
+          -1348,
+          68
+        ]
+      },
+      {
+        "name": "Kiuyoyou Shrine",
+        "coords": [
+          -1106,
+          2086,
+          104
+        ]
+      },
+      {
+        "name": "Ihen-a Shrine",
+        "coords": [
+          3783,
+          576
+        ]
+      },
+      {
+        "name": "Jiukoum Shrine",
+        "coords": [
+          867,
+          -2279,
+          141
+        ]
+      },
+      {
+        "name": "Riogok Shrine",
+        "coords": [
+          -1440,
+          -1616,
+          89
+        ]
+      },
+      {
+        "name": "Mogawak Shrine",
+        "coords": [
+          3299,
+          424,
+          112
+        ]
+      },
+      {
+        "name": "Mayausiy Shrine",
+        "coords": [
+          -1165,
+          2602,
+          -83
+        ]
+      },
+      {
+        "name": "Domizuin Shrine",
+        "coords": [
+          3305,
+          1443,
+          426
+        ]
+      },
+      {
+        "name": "Gasas Shrine",
+        "coords": [
+          -4151,
+          99,
+          40
+        ]
+      },
+      {
+        "name": "Serutabomac Shrine",
+        "coords": [
+          -180,
+          1169,
+          280
+        ]
+      },
+      {
+        "name": "Sonapan Shrine",
+        "coords": [
+          -1921,
+          -357,
+          228
+        ]
+      },
+      {
+        "name": "Tadarok Shrine",
+        "coords": [
+          -1082,
+          -2187,
+          129
+        ]
+      },
+      {
+        "name": "Iun-orok Shrine",
+        "coords": [
+          -3538,
+          853,
+          -133
+        ]
+      },
+      {
+        "name": "Jochi-iu Shrine",
+        "coords": [
+          4345,
+          2874,
+          165
+        ]
+      },
+      {
+        "name": "Utsushok Shrine",
+        "coords": [
+          669,
+          -3358,
+          72
+        ]
+      },
+      {
+        "name": "Kimayat Shrine",
+        "coords": [
+          2863,
+          3637,
+          241
+        ]
+      },
+      {
+        "name": "Mayamats Shrine",
+        "coords": [
+          -4636,
+          -1514,
+          452
+        ]
+      },
+      {
+        "name": "Gatanisis Shrine",
+        "coords": [
+          4496,
+          827,
+          95
+        ]
+      },
+      {
+        "name": "Tenmaten Shrine",
+        "coords": [
+          -593,
+          1551,
+          -14
+        ]
+      },
+      {
+        "name": "Susub Shrine",
+        "coords": [
+          348,
+          -2051,
+          -26
+        ]
+      },
+      {
+        "name": "Rotsumamu Shrine",
+        "coords": [
+          -3408,
+          -1361,
+          335
+        ]
+      },
+      {
+        "name": "Kamatukis Shrine",
+        "coords": [
+          3431,
+          3357,
+          71
+        ]
+      },
+      {
+        "name": "Otutsum Shrine",
+        "coords": [
+          -4468,
+          -670,
+          509
+        ]
+      },
+      {
+        "name": "Kudanisar Shrine",
+        "coords": [
+          -4168,
+          -2144,
+          50
+        ]
+      },
+      {
+        "name": "Apogek Shrine",
+        "coords": [
+          3885,
+          -214,
+          164
+        ]
+      },
+      {
+        "name": "Joju-u-u Shrine",
+        "coords": [
+          1516,
+          -3576,
+          142
+        ]
+      },
+      {
+        "name": "Ishokin Shrine",
+        "coords": [
+          -566,
+          -3523,
+          129
+        ]
+      },
+      {
+        "name": "Rasiwak Shrine",
+        "coords": [
+          4665,
+          3262,
+          2
+        ]
+      },
+      {
+        "name": "Kitawak Shrine",
+        "coords": [
+          -1528,
+          -2929,
+          321
+        ]
+      },
+      {
+        "name": "Motsusis Shrine",
+        "coords": [
+          -1795,
+          -3485,
+          45
+        ]
+      },
+      {
+        "name": "Maoikes Shrine",
+        "coords": [
+          2275,
+          146,
+          79
+        ]
+      },
+      {
+        "name": "Yomizuk Shrine",
+        "coords": [
+          4413,
+          -614,
+          34
+        ]
+      },
+      {
+        "name": "Jogou Shrine",
+        "coords": [
+          3346,
+          -1188,
+          57
+        ]
+      },
+      {
+        "name": "Jikais Shrine",
+        "coords": [
+          4268,
+          -1671,
+          182
+        ]
+      },
+      {
+        "name": "Anedamimik Shrine",
+        "coords": [
+          4231,
+          -2179,
+          -12
+        ]
+      }
+    ];
+    const sqdist = (a, b) => ((a[0] - b[0])**2 + (a[1] - b[1])**2 + (a[2] - b[2])**2);
+    const got = JSON.parse(localStorage.getItem('got') || '""') || {};
+    const getClosest = (value) => {
+      const loc = value.split(' ').map(a => parseInt(a));
+      const closest = { shrine: null, dist: Infinity };
+      
+      for (let i = 0; i < shrines.length; i++) {
+        if (got[shrines[i].name]) continue;
+        const idist = sqdist(loc, shrines[i].coords);
+        if (idist < closest.dist) {
+          closest.shrine = shrines[i];
+          closest.dist = idist;
+        }
+      }
+      const next = document.querySelector('#next');
+      next.textContent = `Your next shrine: ${closest.shrine.name} (${closest.shrine.coords.join(', ')})`;
+      const check = document.createElement('input');
+      check.type = 'checkbox';
+      check.addEventListener('click', () => {
+        got[closest.shrine.name] = 1;
+        localStorage.setItem('got', JSON.stringify(got));
+        getClosest(value);
+      });
+      const label = document.createElement('label');
+      label.textContent = 'I already have this one.';
+      label.insertBefore(check, label.firstChild);
+      next.appendChild(document.createElement('br'));
+      next.appendChild(label);
+    };
+    document.querySelector('#location').addEventListener('keydown', ({ key, target: { value } }) => {
+      if (key === 'Enter') {
+        getClosest(value);
+      }
+    })
+  </script>
+</html>
